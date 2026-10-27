@@ -24,11 +24,12 @@ A personal status site: it shows what Ved is doing, based on location and Sleep 
 1. Import this repo in Vercel.
 2. Create a free Upstash Redis database.
 3. In Vercel -> Settings -> Environment Variables, set:
-   - `UPSTASH_REDIS_REST_URL`
-   - `UPSTASH_REDIS_REST_TOKEN`
    - `INGEST_SECRET` — a long random secret. This is the OwnTracks password
      and the Sleep Shortcut secret.
    - `ADMIN_PASSWORD` — a different secret, for the `/admin` login.
+   - Redis: if you linked an Upstash store in Vercel, it auto-creates
+     `KV_REST_API_URL` / `KV_REST_API_TOKEN` and the code uses those.
+     Otherwise set `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN`.
 4. Redeploy.
 
 ### 2. OwnTracks (iPhone)
